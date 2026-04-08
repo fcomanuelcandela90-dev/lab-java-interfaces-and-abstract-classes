@@ -30,18 +30,18 @@ Once you finish the assignment, submit a URL link to your repository or your pul
 
 <br>
 
-### Car Inventory System
+### CarInventorySystem.Car Inventory System
 
-1. Suppose you are building a car inventory system. All cars have a `vinNumber`, `make`, `model` and `mileage`. But no car is just a car. Each car is either a `Sedan`, a `UtilityVehicle` or a `Truck`.
-2. Create an abstract class named `Car` and define the following properties and behaviors:
+1. Suppose you are building a car inventory system. All cars have a `vinNumber`, `make`, `model` and `mileage`. But no car is just a car. Each car is either a `CarInventorySystem.Sedan`, a `CarInventorySystem.UtilityVehicle` or a `CarInventorySystem.Truck`.
+2. Create an abstract class named `CarInventorySystem.Car` and define the following properties and behaviors:
    - `vinNumber`: a `String` representing the VIN number of the car
    - `make`: a `String` representing the make of the car
    - `model`: a `String` representing the model of the car
    - `mileage`: an `int` representing the mileage of the car
    - `getInfo()`: a method that returns a `String` containing all of the car's properties in a readable format
-3. Create three classes that extend `Car`: `Sedan`, `UtilityVehicle` and `Truck`.
-4. `UtilityVehicle` objects should have an additional `fourWheelDrive` property, a `boolean` that represents whether the vehicle has four-wheel drive.
-5. `Truck` objects should have an additional `towingCapacity` property, a `double` that represents the towing capacity of the truck.
+3. Create three classes that extend `CarInventorySystem.Car`: `CarInventorySystem.Sedan`, `CarInventorySystem.UtilityVehicle` and `CarInventorySystem.Truck`.
+4. `CarInventorySystem.UtilityVehicle` objects should have an additional `fourWheelDrive` property, a `boolean` that represents whether the vehicle has four-wheel drive.
+5. `CarInventorySystem.Truck` objects should have an additional `towingCapacity` property, a `double` that represents the towing capacity of the truck.
 
 <br>
 
@@ -67,6 +67,21 @@ Once you finish the assignment, submit a URL link to your repository or your pul
 3. `IntArrayList` should store numbers in an array with a length of 10 by default. When the `add` method is called, you must first determine if the array is full. If it is, create a new array that is 50% larger, move all elements over to the new array and add the new element. (For example, an array of length 10 would be increased to 15.)
 4. `IntVector` should store numbers in an array with a length of 20 by default. When the `add` method is called, you must first determine if the array is full. If it is, create a new array that is double the size of the current array, move all elements over to the new array and add the new element. (For example, an array of length 10 would be increased to 20.)
 5. In your `README.md`, include an example of when `IntArrayList` would be more efficient and when `IntVector` would be more efficient.
+
+# IntList Implementation Analysis
+
+## Efficiency Comparison: IntArrayList vs. IntVector
+
+This project includes two implementations of the `IntList` interface, each with a different strategy for resizing its internal array when it reaches capacity.
+
+### When is `IntArrayList` more efficient?
+`IntArrayList` grows by **50%** of its current size when full.
+* **Best Use Case:** It is more efficient in terms of **Memory (RAM) consumption**. It is ideal when you have limited memory resources or when you expect the list to grow, but at a slow, gradual, or predictable pace. Because it doesn't request massive blocks of memory at once, it prevents memory waste.
+
+### When is `IntVector` more efficient?
+`IntVector` grows by **100%** (it doubles its size) when full.
+* **Best Use Case:** It is more efficient in terms of **Processing Speed (CPU)** when dealing with massive amounts of data. Resizing an array (creating a new one and copying all elements over) is a heavy operation. By doubling in size, `IntVector` performs this costly operation much less frequently than `IntArrayList`. It trades memory space for faster execution times when rapidly adding many elements.
+
 
 <br>
 
