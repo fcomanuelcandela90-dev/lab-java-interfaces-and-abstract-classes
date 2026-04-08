@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AppVideoStreamingService {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("~~~~~~VIDEO SUMMARY~~~~~~");
         List<Video> videos = new ArrayList<>();
 

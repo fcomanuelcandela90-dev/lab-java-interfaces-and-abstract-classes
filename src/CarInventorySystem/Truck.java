@@ -3,8 +3,8 @@ package CarInventorySystem;
 public class Truck extends Car{
     private double towingCapacity;
 
-    public Truck(String vinNumber, String make, String model, double mileage, double towingCapacity) {
-        super(vinNumber, make, model, (int) mileage);
+    public Truck(String vinNumber, String make, String model, int mileage, double towingCapacity) {
+        super(vinNumber, make, model, mileage);
         this.towingCapacity = towingCapacity;
     }
 
